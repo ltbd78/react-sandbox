@@ -36,7 +36,7 @@
     transition-duration: 1s;
   }
   .App.activeNav {
-    transform: translateX(-50%) translateY(5%);
+    transform: translateX(-50%);
     transition-property: all;
     transition-duration: 1s;
   }
