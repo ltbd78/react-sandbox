@@ -12,22 +12,42 @@
   min-width: 100px;
 }
 
-.navbar {
+.nav-bar {
   background-color: green;
   display: flex;
   grid-area: a;
+}
+
+.dropdown {
+  width: var(--navbar-size);
+  height: var(--navbar-size)
+
+}
+
+.nav-items {
+  background-color: blue;
 }
 
 @media screen and (orientation: portrait) {
   .App {
     grid-template-areas: "a" "b";
     grid-template-rows: var(--navbar-size) auto;
+    transition-property: all;
+    transition-duration: 1s;
   }
-  .navbar {
+  .App.activeNav {
+    transform: translateX(-50%) translateY(5%);
+    transition-property: all;
+    transition-duration: 1s;
+  }
+  .nav-bar {
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     position: sticky;
     top: 0;
+  }
+  .nav-items.activeNav {
+    background-color: yellow;
   }
 }
 
@@ -36,9 +56,9 @@
     grid-template-areas: "a b";
     grid-template-columns: var(--navbar-size) auto;
   }
-  .navbar {
+  .nav-bar {
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
   }
 }
 
